@@ -1,0 +1,25 @@
+
+<ion-content padding>
+
+
+    <ion-grid style="height: 100%">
+        <ion-row justify-content-center align-items-center style="height: 100%; flex-direction: column">
+            
+            <circle-progress (click)="openDoor()"
+            [percent]="percent"
+            [radius]="radius"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#76C2AF'"
+            [innerStrokeColor]="inner"
+            [animation]="true"
+            [animationDuration]="300"
+          ></circle-progress>
+            
+            
+          </ion-row>
+        </ion-grid>
+
+
+
+</ion-content>
