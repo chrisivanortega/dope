@@ -51,7 +51,7 @@ export class HomePage {
 
   openDoor(){
     this.color = "tertiary"  
-    this.http.get('http://192.168.100.57:81/toggleGPIOx').subscribe((response) => {    
+    this.http.get('http://192.168.100.57:81/toggleGPIO').subscribe((response) => {    
       this.color = "success"
     });
 
