@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
+
+
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -14,30 +17,42 @@ export class HomePage {
   radius:number = 100;
   progress:any = 0;
   inner:any = "#f04141";
-
+  color:any = 'success'
   constructor(private http: HttpClient) {
     
   }
 
+
+
   ngOnInit(){
+    
+    setInterval(function(){ this.checkav();}.bind(this), 1000);
+
+
+
+  }
+
+
+  checkav(){
+
     this.http.get('http://192.168.100.57:81/readState').subscribe((response) => {
       
-      this.inner = "#10dc60";
+      this.color = "success";
     },
     (err)=>{
-      this.inner = "#f04141";
+      this.color = "danger";
+
     }
 
     
     );
 
   }
+
   openDoor(){
-    
-    
-    this.http.get('http://192.168.100.57:81/toggleGPIO').subscribe((response) => {
-    
-      this.percent = 100
+    this.color = "tertiary"  
+    this.http.get('http://192.168.100.57:81/toggleGPIOx').subscribe((response) => {    
+      this.color = "success"
     });
 
   }

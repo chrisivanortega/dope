@@ -1,24 +1,12 @@
 
 <ion-content padding>
+  <ion-fab horizontal="center" vertical="center" slot="fixed">
+    <ion-fab-button [color]="color" (click)="openDoor()">
+      <ion-icon name="logo-steam"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 
-    <ion-grid style="height: 100%">
-        <ion-row justify-content-center align-items-center style="height: 100%; flex-direction: column">
-            
-            <circle-progress (click)="openDoor()"
-            [percent]="percent"
-            [radius]="radius"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#76C2AF'"
-            [innerStrokeColor]="inner"
-            [animation]="true"
-            [animationDuration]="300"
-          ></circle-progress>
-            
-            
-          </ion-row>
-        </ion-grid>
 
 
 
